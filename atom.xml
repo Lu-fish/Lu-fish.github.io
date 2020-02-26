@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>Gridea</title>
-    <updated>2020-02-26T00:15:48.592Z</updated>
+    <updated>2020-02-26T00:24:47.880Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
-    <subtitle>&lt;a&gt;a fish&lt;/a&gt;</subtitle>
+    <subtitle>&lt;h1&gt;a fish&lt;/h1&gt;</subtitle>
     <logo>https://Lu-fish.github.io/images/avatar.png</logo>
     <icon>https://Lu-fish.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
