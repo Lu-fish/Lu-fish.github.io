@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | 一条鱼的blog</title>
+<title>P5719 【深基4.例3】分类平均 | 一条鱼的blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,14 +24,11 @@
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+    <meta name="description" content="思路：%你模拟
+从1到n枚举每一个数，如果可以整除，第一个总和增加这个数，数字个数加一。
+不可以的话，第二个总和增加这个数，数字个数加一。
+重点：保留一位小数不会printf的菜鸡只能用stl了
+#include&lt;iostream&g..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -103,20 +100,49 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">P5719 【深基4.例3】分类平均</h2>
+            <div class="post-date">2020-02-26</div>
             
             <div class="post-content" v-pre>
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+              <p>思路：<s>%你</s>模拟</p>
+<p>从1到n枚举每一个数，如果可以整除，第一个总和增加这个数，数字个数加一。</p>
+<p>不可以的话，第二个总和增加这个数，数字个数加一。</p>
+<p>重点：保留一位小数<s>不会printf的菜鸡只能用stl了</s></p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;//确定精度要用
+using namespace std;
+int main(){
+    int n,k;//如题目
+    double ans1=0,ans2=0,cnt1=0,cnt2=0;
+    //ans1表示第一个要求的数的总和，ans2同样，cnt1表示第一个要求的数的个数，cnt同样
+    cin&gt;&gt;n&gt;&gt;k;//输入
+    for(int i=1;i&lt;=n;i++){//枚举1~n
+        if(i%k==0){//如果可以除尽
+            ans1+=i;//总和++
+            cnt1++;//个数++
+        }
+        else{
+            ans2+=i;
+            cnt2++;
+        }
+    }
+    cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;ans1/cnt1&lt;&lt;' ';//注意设置精度
+    cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;ans2/cnt2;
+    return 0;
+}
+</code></pre>
 
             </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Lu-fish.github.io/post/p5719题解/">
+                  <h3 class="post-title">
+                    P5719 【深基4.例3】分类平均
+                  </h3>
+                </a>
+              </div>
             
 
             
