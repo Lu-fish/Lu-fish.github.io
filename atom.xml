@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>一条鱼的blog</title>
-    <updated>2020-02-26T12:53:05.776Z</updated>
+    <updated>2020-02-26T12:54:08.572Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
@@ -14,41 +14,6 @@
         <title type="html"><![CDATA[P5719 【深基4.例3】分类平均]]></title>
         <id>https://Lu-fish.github.io/post/p5719-shen-ji-4li-3-fen-lei-ping-jun/</id>
         <link href="https://Lu-fish.github.io/post/p5719-shen-ji-4li-3-fen-lei-ping-jun/">
-        </link>
-        <updated>2020-02-26T12:44:02.000Z</updated>
-        <content type="html"><![CDATA[<p>思路：<s>%你</s>模拟</p>
-<p>从1到n枚举每一个数，如果可以整除，第一个总和增加这个数，数字个数加一。</p>
-<p>不可以的话，第二个总和增加这个数，数字个数加一。</p>
-<p>重点：保留一位小数<s>不会printf的菜鸡只能用stl了</s></p>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;iomanip&gt;//确定精度要用
-using namespace std;
-int main(){
-    int n,k;//如题目
-    double ans1=0,ans2=0,cnt1=0,cnt2=0;
-    //ans1表示第一个要求的数的总和，ans2同样，cnt1表示第一个要求的数的个数，cnt同样
-    cin&gt;&gt;n&gt;&gt;k;//输入
-    for(int i=1;i&lt;=n;i++){//枚举1~n
-        if(i%k==0){//如果可以除尽
-            ans1+=i;//总和++
-            cnt1++;//个数++
-        }
-        else{
-            ans2+=i;
-            cnt2++;
-        }
-    }
-    cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;ans1/cnt1&lt;&lt;' ';//注意设置精度
-    cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;ans2/cnt2;
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[P5719 【深基4.例3】分类平均]]></title>
-        <id>https://Lu-fish.github.io/post/p5719题解/</id>
-        <link href="https://Lu-fish.github.io/post/p5719题解/">
         </link>
         <updated>2020-02-26T12:44:02.000Z</updated>
         <content type="html"><![CDATA[<p>思路：<s>%你</s>模拟</p>
