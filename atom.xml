@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>一条鱼的blog</title>
-    <updated>2020-02-26T00:25:26.945Z</updated>
+    <updated>2020-02-26T00:28:58.498Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
@@ -11,12 +11,43 @@
     <icon>https://Lu-fish.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 一条鱼的blog</rights>
     <entry>
-        <title type="html"><![CDATA[test]]></title>
-        <id>https://Lu-fish.github.io/post/test/</id>
-        <link href="https://Lu-fish.github.io/post/test/">
+        <title type="html"><![CDATA[题解 AT3723 【Round Up the Mean】]]></title>
+        <id>https://Lu-fish.github.io/post/ti-jie-at3723-round-up-the-mean/</id>
+        <link href="https://Lu-fish.github.io/post/ti-jie-at3723-round-up-the-mean/">
         </link>
         <updated>2020-02-25T09:15:01.000Z</updated>
-        <content type="html"><![CDATA[<p><del><h1>test</h1></del></p>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/AT3723">题目传送门</a></p>
+<h1 id="stl大法好">STL大法好</h1>
+<p>介绍一下<strong>ceil</strong>函数。</p>
+<p>这个函数可以将一个浮点数向上取整，正是题目所需。</p>
+<ul>
+<li>例如：ceil(1.2)=2</li>
+</ul>
+<p><strong>code：</strong></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include&lt;cmath&gt;//使用ceil要用
+using namespace std;
+long long n,m;//定义题目中两个整数
+int main(){
+   cin&gt;&gt;n&gt;&gt;m;
+   cout&lt;&lt;ceil((n+m)/2.0);//求两个数平均数并向上取整
+   cout&lt;&lt;endl;//atcoder 必备
+   return 0;
+}
+</code></pre>
+<hr>
+<p>再讲一下<s>高精度</s>python做法</p>
+<p>然鹅：python中也有一个ceil函数，与c++中的ceil函数意义一样。</p>
+<p>用法：math.ceil(float a)</p>
+<h2 id="交互模式下运行结果">交互模式下运行结果：</h2>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/8kg9a2dg.png" alt="" loading="lazy"></figure>
+<p>上完整代码：</p>
+<pre><code class="language-python">import math   		    #引入math库，ceil在此库中
+a,b=map(int,input().split())#输入a,b
+print(math.ceil((a+b)/2))#求两个数平均数并向上取整
+#print()在最后会自动换行所以不必再换行
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
