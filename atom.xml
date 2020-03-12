@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>一条鱼的blog</title>
-    <updated>2020-02-26T12:54:08.572Z</updated>
+    <updated>2020-03-12T07:19:20.048Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
@@ -10,6 +10,134 @@
     <logo>https://Lu-fish.github.io/images/avatar.png</logo>
     <icon>https://Lu-fish.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 一条鱼的blog</rights>
+    <entry>
+        <title type="html"><![CDATA[走迷宫v1.0代码]]></title>
+        <id>https://Lu-fish.github.io/post/zoumigong-v1.0/</id>
+        <link href="https://Lu-fish.github.io/post/zoumigong-v1.0/">
+        </link>
+        <updated>2020-03-12T07:17:54.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;ctime&gt; 
+using namespace std;
+char map[100][100];
+int N; 
+bool vst[100][100];
+int dx[4]={0,1,0,-1};
+int dy[4]={1,0,-1,0};
+void print(){
+	for(int i=1;i&lt;=N;i++,cout&lt;&lt;endl)
+		for(int j=1;j&lt;=N;j++)
+			cout&lt;&lt;map[i][j];
+}
+void dfs(int x,int y){
+	if(map[x][y]=='#'&amp;&amp;x==1&amp;&amp;y==1)return ; 
+	vst[x][y]=1;	
+	if(vst[N][N])return;
+	for(int k=0;k&lt;4;k++){
+		int nx=x+dx[k],ny=y+dy[k];
+		if(!vst[nx][ny]&amp;&amp;map[nx][ny]=='o'&amp;&amp;nx&gt;=1&amp;&amp;nx&lt;=N&amp;&amp;ny&gt;=1&amp;&amp;ny&lt;=N){						
+			dfs(nx,ny);			
+		}
+	}
+}
+
+int main(){
+	srand(time(0));
+	cout&lt;&lt;&quot;输入wasd控制方向，o为空地，#为墙，*为当前地点,右下角为终点\n&quot;;//介绍 
+	cout&lt;&lt;&quot;输入地图大小：&quot;;
+	cin&gt;&gt;N; 
+	cout&lt;&lt;&quot;地图生成中……&quot;;
+	while(1){				
+		for(int i=1;i&lt;=N;i++)
+			for(int j=1;j&lt;=N;j++)
+			{				
+				int a=rand()%7;
+				if(a&lt;3)map[i][j]='#';
+				else map[i][j]='o';
+			}
+		dfs(1,1);
+		if(vst[N][N]==1)break;
+		for(int i=1;i&lt;=N;i++)for(int j=1;j&lt;=N;j++) vst[i][j]=0;
+	}
+	system(&quot;cls&quot;); 
+	map[1][1]='*';
+	print();
+	int x=1,y=1;
+	while(1){
+		if(x==N&amp;&amp;y==N){
+			cout&lt;&lt;&quot;到了！\n&quot;;
+			system(&quot;pause&quot;);
+			return 0; 
+		}
+		char a;
+		cin&gt;&gt;a;
+		if(a=='w'){
+			int nx=x+dx[3],ny=y+dy[3];
+			if(map[nx][ny]=='#'||nx&lt;=0||nx&gt;N||ny&lt;=0||ny&gt;N){
+				cout&lt;&lt;&quot;撞墙了QAQ\n&quot;;
+				continue; 
+			}
+			else{
+				map[x][y]='o';
+				map[nx][ny]='*';
+				system(&quot;cls&quot;);
+				print();
+				x=nx,y=ny;
+			}
+		}
+		else if(a=='d'){//correct
+			int nx=x+dx[0],ny=y+dy[0];
+			if(map[nx][ny]=='#'||nx&lt;=0||nx&gt;N||ny&lt;=0||ny&gt;N){
+				cout&lt;&lt;&quot;撞墙了QAQ\n&quot;;
+				continue; 
+			}
+			else{
+				map[x][y]='o';
+				map[nx][ny]='*';
+				system(&quot;cls&quot;);
+				print();
+				x=nx,y=ny;
+			}
+		}
+		else if(a=='s'){
+			int nx=x+dx[1],ny=y+dy[1];
+			if(map[nx][ny]=='#'||nx&lt;=0||nx&gt;N||ny&lt;=0||ny&gt;N){
+				cout&lt;&lt;&quot;撞墙了QAQ\n&quot;;
+				continue; 
+			}
+			else{
+				map[x][y]='o';
+				map[nx][ny]='*';
+				system(&quot;cls&quot;);
+				print();
+				x=nx,y=ny;
+			}
+		}
+		else if(a=='a'){
+			int nx=x+dx[2],ny=y+dy[2];
+			if(map[nx][ny]=='#'||nx&lt;=0||nx&gt;N||ny&lt;=0||ny&gt;N){
+				cout&lt;&lt;&quot;撞墙了QAQ\n&quot;;
+				continue; 
+			}
+			else{
+				map[x][y]='o';
+				map[nx][ny]='*';
+				system(&quot;cls&quot;);
+				print();
+				x=nx,y=ny;
+			}
+		}
+		else{
+			cout&lt;&lt;&quot;大哥您输入了什么鬼啊&quot;;
+			continue; 
+		}
+	}
+	system(&quot;pause&quot;);
+} 
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[P5719 【深基4.例3】分类平均]]></title>
         <id>https://Lu-fish.github.io/post/p5719-shen-ji-4li-3-fen-lei-ping-jun/</id>
