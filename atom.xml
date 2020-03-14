@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>一条鱼的blog</title>
-    <updated>2020-03-14T12:38:10.103Z</updated>
+    <updated>2020-03-14T13:13:25.143Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
@@ -10,6 +10,33 @@
     <logo>https://Lu-fish.github.io/images/avatar.png</logo>
     <icon>https://Lu-fish.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 一条鱼的blog</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF731A 【Night at the Museum】]]></title>
+        <id>https://Lu-fish.github.io/post/ti-jie-cf731a-night-at-the-museum/</id>
+        <link href="https://Lu-fish.github.io/post/ti-jie-cf731a-night-at-the-museum/">
+        </link>
+        <updated>2020-03-14T13:12:13.000Z</updated>
+        <content type="html"><![CDATA[<p>这道题主要是要考察字符串的一些知识。</p>
+<p>只要比较顺时针与逆时针那个更短再加到ans里就可以了。</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;cmath&gt;
+using namespace std;
+//以上不解释
+int main(){
+    string s;
+    cin&gt;&gt;s;
+    int ans=0;//这里一定要初始化，不然会出来一个不知道什么数的数
+    ans+=min(abs(s[0]-'a'),26-abs(s[0]-'a'));//比较顺时针转与逆时针转的较小值
+    for(int i=1;i&lt;s.size();i++){
+        ans+=min(abs(s[i]-s[i-1]),26-abs(s[i]-s[i-1]));//比较顺时针转与逆时针转的较小值
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;//输出
+    return 0;//结束求过qaq
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[走迷宫V1.5代码]]></title>
         <id>https://Lu-fish.github.io/post/zou-mi-gong-v15-dai-ma/</id>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>编程 | 一条鱼的blog</title>
+<title>题解 CF731A 【Night at the Museum】 | 一条鱼的blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,25 @@
 <link rel="stylesheet" href="https://Lu-fish.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="&lt;h1&gt;a fish&lt;/h1&gt;">
+    <meta name="description" content="这道题主要是要考察字符串的一些知识。
+只要比较顺时针与逆时针那个更短再加到ans里就可以了。
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;cmath&gt;
+usi..." />
+    <meta name="keywords" content="编程" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,43 +100,61 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 编程</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://Lu-fish.github.io/post/ti-jie-cf731a-night-at-the-museum/">
-                  <h2 class="post-title">题解 CF731A 【Night at the Museum】</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-14
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://Lu-fish.github.io/post/ti-jie-at3723-round-up-the-mean/">
-                  <h2 class="post-title">题解 AT3723 【Round Up the Mean】</h2>
-                </a>
-                <div class="post-date">
-                  2020-02-25
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">题解 CF731A 【Night at the Museum】</h2>
+            <div class="post-date">2020-03-14</div>
+            
+            <div class="post-content" v-pre>
+              <p>这道题主要是要考察字符串的一些知识。</p>
+<p>只要比较顺时针与逆时针那个更短再加到ans里就可以了。</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;cmath&gt;
+using namespace std;
+//以上不解释
+int main(){
+    string s;
+    cin&gt;&gt;s;
+    int ans=0;//这里一定要初始化，不然会出来一个不知道什么数的数
+    ans+=min(abs(s[0]-'a'),26-abs(s[0]-'a'));//比较顺时针转与逆时针转的较小值
+    for(int i=1;i&lt;s.size();i++){
+        ans+=min(abs(s[i]-s[i-1]),26-abs(s[i]-s[i-1]));//比较顺时针转与逆时针转的较小值
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;//输出
+    return 0;//结束求过qaq
+}
+</code></pre>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://Lu-fish.github.io/tag/biancheng/" class="tag">
+                    编程
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Lu-fish.github.io/post/zou-mi-gong-v15-dai-ma/">
+                  <h3 class="post-title">
+                    走迷宫V1.5代码
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -145,6 +175,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
