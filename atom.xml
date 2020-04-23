@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Lu-fish.github.io</id>
     <title>blog here</title>
-    <updated>2020-04-23T13:00:59.080Z</updated>
+    <updated>2020-04-23T13:07:11.815Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Lu-fish.github.io"/>
     <link rel="self" href="https://Lu-fish.github.io/atom.xml"/>
@@ -43,7 +43,8 @@ int main(){
         <link href="https://Lu-fish.github.io/post/zou-mi-gong-v15-dai-ma/">
         </link>
         <updated>2020-03-14T12:36:57.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-cpp">#include&lt;iostream&gt;
+        <content type="html"><![CDATA[<p>#下载：https://github.com/thefish12/hello-world</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
 #include&lt;cstdlib&gt;
 #include&lt;ctime&gt; 
 #include&lt;string&gt;
